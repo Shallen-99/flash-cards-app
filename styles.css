@@ -156,6 +156,9 @@ body {
   border-radius: var(--radius);
   width: 90%;
   max-width: 340px;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
 }
 
 .hidden {
@@ -168,3 +171,5 @@ body {
     grid-template-rows: auto auto 1fr;
   }
 }
+
+
