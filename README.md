@@ -47,3 +47,11 @@ Users can create decks and cards.
 I build applications and mini projects tied to my various interests. I look for creative solutions to real world problems and think of technical ways to address them. While no application is ever perfect I find joy in the process and all my final products!
     
 ## Works Cited:
+
+
+## Reflection Questions
+* AI significantly sped up the development process by quickly generating the initial layout for the flashcards interface (sidebar, deck list, study view).
+* I was having an issue with exiting out of the modal so I had to search through and edit the event listener so it would "listen" correctly
+* I had to refactot the logic for retriving the cards
+* I added aria labels to the modal
+* Instead of using broad outputs I tried to be as precise as possible
