@@ -1,0 +1,170 @@
+:root {
+  --bg: #ffffff;
+  --fg: #222;
+  --accent: #3b82f6;
+  --border: #ddd;
+  --radius: 6px;
+  --sidebar-w: 240px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1e1e1e;
+    --fg: #e5e5e5;
+    --border: #333;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .75rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  flex: 1;
+}
+
+.sidebar {
+  padding: 1rem;
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+}
+
+.deck-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.deck-list li {
+  padding: .5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.deck-list li.active {
+  background: var(--accent);
+  color: white;
+}
+
+.main {
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: 3px solid #2563eb;
+}
+
+.input {
+  padding: .5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.study-card {
+  width: 100%;
+  max-width: 420px;
+  height: 260px;
+  margin: 1rem auto;
+  position: relative;
+  perspective: 1000px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  backface-visibility: hidden; 
+  background: white;
+  transition: transform 0.6s ease;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.study-card.flipped .card-front {
+  transform: rotateY(180deg);
+}
+
+.study-card.flipped .card-back {
+  transform: rotateY(0deg);
+}
+
+.card-list .card-item {
+  padding: .75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: .5rem;
+  background: white;
+}
+
+.card-item-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-item-actions button {
+  margin-left: .5rem;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: var(--radius);
+  width: 90%;
+  max-width: 340px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+  }
+}

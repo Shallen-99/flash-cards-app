@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcards App</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./app.js" defer></script>
+</head>
+
+<body>
+  <header class="app-header">
+    <h1 class="app-title">Flashcards</h1>
+    <button id="new-deck-btn" class="btn">New Deck</button>
+  </header>
+
+  <div class="layout">
+    <nav class="sidebar" aria-label="Deck List">
+      <ul id="deck-list" class="deck-list"></ul>
+    </nav>
+
+    <main class="main">
+
+      <section class="deck-header">
+        <h2 id="deck-title">Select a deck</h2>
+
+        <div class="deck-toolbar">
+          <input 
+            id="search-input"
+            class="input"
+            type="search"
+            placeholder="Search cards…"
+            aria-label="Search cards"
+          />
+          <button id="shuffle-btn" class="btn">Shuffle</button>
+          <button id="new-card-btn" class="btn">New Card</button>
+        </div>
+      </section>
+
+      <section class="card-view">
+        <div id="study-card" class="study-card" tabindex="0">
+          <div class="card-face card-front"></div>
+          <div class="card-face card-back"></div>
+        </div>
+
+        <div class="study-controls">
+          <button id="prev-btn" class="btn">Prev</button>
+          <button id="flip-btn" class="btn">Flip</button>
+          <button id="next-btn" class="btn">Next</button>
+        </div>
+      </section>
+
+      <section id="card-list" class="card-list"></section>
+    </main>
+  </div>
+
+  <footer class="app-footer">
+    <p>Tip: Use Left/Right arrows to navigate. Space to flip.</p>
+  </footer>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content" role="document">
+      <h3 id="modal-title"></h3>
+      <form id="modal-form"></form>
+      <button id="modal-close" class="btn">Close</button>
+    </div>
+  </div>
+
+</body>
+</html>
